@@ -20,6 +20,7 @@ npx degit dhelarius/react-ts my-app
 ```
 
 Then, install the dependencies:
+
 ```
 pnpm install
 ```

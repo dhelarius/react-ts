@@ -1,3 +1,5 @@
+/* global module */
+
 module.exports = {
   extends: [
     "eslint:recommended",
@@ -6,7 +8,7 @@ module.exports = {
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
+  plugins: ["react", "react-hooks", "@typescript-eslint"],
   root: true,
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -19,6 +21,8 @@ module.exports = {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
   },
   settings: {
     react: {
