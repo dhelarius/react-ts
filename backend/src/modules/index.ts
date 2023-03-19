@@ -1,8 +1,8 @@
 import fs from "fs";
 import { Express } from "express";
 
-export function loadModules(app: Express) {
-    fs.readdir('./src/app', function(err, files) {
+export function load(app: Express) {
+    fs.readdir('./src/routes', function(err, files) {
         if (err) {
             console.error('Error read directory', err);
             return;
@@ -13,7 +13,7 @@ export function loadModules(app: Express) {
 }
 
 function startModule(module: string, app: Express) {
-    const dir = `../app/${module}/router`;
+    const dir = `../routes/${module}/controller`;
     import(dir).then(result => {
         const module = result.default();
         const { root, router } = module;

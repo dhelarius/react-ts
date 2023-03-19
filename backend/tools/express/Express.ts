@@ -6,7 +6,14 @@ const env = process.env.NODE_ENV || 'development';
 
 type Log = string | object;
 
-export default function (app: Express) {
+export default function init() {
+    const app = express();
+    config(app);
+
+    return app;
+}
+
+function config(app: Express) {  
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     app.use(cors());

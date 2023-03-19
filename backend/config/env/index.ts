@@ -1,3 +1,7 @@
+interface Api {
+    readonly port: string;
+}
+
 interface DBEnv {
     readonly user: string;
     readonly password: string;
@@ -12,6 +16,10 @@ interface DBEnv {
 interface Session {
     readonly session_secret: string;
     readonly token_secret: string;
+}
+
+const api: Api = {
+    port: process.env.API_PORT
 }
 
 const db: DBEnv = {
@@ -30,4 +38,4 @@ const session: Session = {
     token_secret: process.env.TOKEN_SECRET
 }
 
-export default { db, session }
+export default { api, db, session }
