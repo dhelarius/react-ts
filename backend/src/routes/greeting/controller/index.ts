@@ -7,7 +7,7 @@ export default function() {
 
     router.get('/greeting/:name', (req, res) => {
         const name = req.params.name;
-        res.json(greeting(name));
+        res.json({ greeting: greeting(name) });
     });
 
     return { root: '/', router };
